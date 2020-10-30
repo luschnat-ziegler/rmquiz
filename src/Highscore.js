@@ -1,17 +1,11 @@
-import PropTypes from 'prop-types'
 import styled from 'styled-components/macro'
-export default Quizbox
+export default Highscore
 
-Quizbox.propTypes = {
-  title: PropTypes.string.isRequired,
-  isDone: PropTypes.bool
-}
-
-function Quizbox() {
+function Highscore({children}) {
 
   return <Wrapper>
       <p>Current Score</p>
-      <div></div>
+      <div>{children}</div>
 
   </Wrapper>
 }

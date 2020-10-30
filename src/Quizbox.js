@@ -7,12 +7,12 @@ function Quizbox({onUserAnswer}) {
 
   const [displayedElements, setDisplayedElements] = useState([
     {
-      img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-      name: "Rick",
+      img: 'https://rickandmortyapi.com/api/character/avatar/249.jpeg',
+      name: "---",
       id: 1
     },{
-      img: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-      name: "Morty",
+      img: 'https://rickandmortyapi.com/api/character/avatar/249.jpeg',
+      name: "---",
       id: 2
     },1])
   

@@ -7,12 +7,12 @@ function Quizbox({onUserAnswer}) {
 
   const [displayedElements, setDisplayedElements] = useState([
     {
-      img: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-      name: "Rick",
+      img: './img/white.png',
+      name: "",
       id: 1
     },{
-      img: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-      name: "Morty",
+      img: './img/white.png',
+      name: "",
       id: 2
     },1])
   
@@ -74,18 +74,16 @@ const ImageStyled = styled.img`
 
 // Function to generate pair of elements for quizbox
 
-function getElements(pairingsArray) {
+async function getElements(pairingsArray) {
 
   const randomArray = pairingsArray[Math.floor(Math.random() * pairingsArray.length)];
 
-  return fetch(`https://rickandmortyapi.com/api/character/${randomArray[0]},${randomArray[1]}`)
-    .then(response => response.json())
-    .then(data => {
-      const newEntry = [
-        {img: data[0].image, name: data[0].name, id: data[0].id},
-        {img: data[1].image, name: data[1].name, id: data[1].id},
-        randomArray[2]
-      ]
-      return newEntry
-    })
+  const response = await fetch(`https://rickandmortyapi.com/api/character/${randomArray[0]},${randomArray[1]}`)
+  const data = await response.json()
+  const newEntry = [
+    { img: data[0].image, name: data[0].name, id: data[0].id },
+    { img: data[1].image, name: data[1].name, id: data[1].id },
+    randomArray[2]
+  ]
+  return newEntry
 }

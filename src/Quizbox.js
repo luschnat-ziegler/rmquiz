@@ -3,7 +3,7 @@ import styled from 'styled-components/macro'
 import arr from './data/rmlist'
 export default Quizbox
 
-function Quizbox() {
+function Quizbox({onUserAnswer}) {
 
   const [displayedElements, setDisplayedElements] = useState([
     {
@@ -24,8 +24,22 @@ function Quizbox() {
     getElements(array).then(elements => setDisplayedElements(elements))
   }
 
-  function clickHandler() {
+  function clickHandlerYes() {
     getNewPair(arr)
+    if (displayedElements[2] === 1) {
+      onUserAnswer(true)
+    } else {
+      onUserAnswer(false)
+    }
+  }
+
+  function clickHandlerNo() {
+    getNewPair(arr)
+    if (displayedElements[2] === 0) {
+      onUserAnswer(true)
+    } else {
+      onUserAnswer(false)
+    }
   }
 
   return <Wrapper>
@@ -33,8 +47,8 @@ function Quizbox() {
       <ImageStyled src={displayedElements[1].img} alt=""></ImageStyled>
       <span>{displayedElements[0].name}</span>
       <span>{displayedElements[1].name}</span>
-      <button onClick={clickHandler}>YES</button>
-      <button onClick={clickHandler}>NO</button>
+      <button onClick={clickHandlerYes}>YES</button>
+      <button onClick={clickHandlerNo}>NO</button>
 </Wrapper>
 }
 

@@ -24,13 +24,17 @@ function Quizbox() {
     getElements(array).then(elements => setDisplayedElements(elements))
   }
 
+  function clickHandler() {
+    getNewPair(arr)
+  }
+
   return <Wrapper>
       <ImageStyled src={displayedElements[0].img} alt=""></ImageStyled>
       <ImageStyled src={displayedElements[1].img} alt=""></ImageStyled>
       <span>{displayedElements[0].name}</span>
       <span>{displayedElements[1].name}</span>
-      <button onClick={() => getNewPair(arr)}>YES</button>
-      <button onClick={() => getNewPair(arr)}>NO</button>
+      <button onClick={clickHandler}>YES</button>
+      <button onClick={clickHandler}>NO</button>
 </Wrapper>
 }
 

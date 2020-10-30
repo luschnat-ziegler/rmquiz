@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   font-family: sans-serif;
   font-weight: 600;
   margin-bottom: 12px;
+  text-align: center;
 
   div {
 

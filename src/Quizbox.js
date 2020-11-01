@@ -56,7 +56,7 @@ function Quizbox({onUserAnswer}) {
 
 const Wrapper = styled.div`
 
-  background-color: rgba(153, 50, 204, 0.6);;
+  background-color: rgba(197,34,25, 0.3);;
 
   display: grid;
   padding: 1.5em 1.5em;
@@ -69,7 +69,7 @@ const Wrapper = styled.div`
   justify-items: center;
   text-align: center;
   color: peachpuff;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 `
 
 const ImageStyled = styled.img`

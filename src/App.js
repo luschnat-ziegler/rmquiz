@@ -29,11 +29,11 @@ const StyledDiv = styled.div`
 `
 
 const Headline = styled.h1`
-  font-size: 1.8em;
+  font-size: 1.9em;
   color: orange;
   text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 15px;
 `
 
 export default App;

@@ -14,7 +14,7 @@ function Quizbox({onUserAnswer}) {
       img: 'https://rickandmortyapi.com/api/character/avatar/249.jpeg',
       name: "---",
       id: 2
-    },1])
+    },2])
   
   useEffect(() => {
     getElements(arr).then(elements => setDisplayedElements(elements))
@@ -47,29 +47,46 @@ function Quizbox({onUserAnswer}) {
       <ImageStyled src={displayedElements[1].img} alt=""></ImageStyled>
       <span>{displayedElements[0].name}</span>
       <span>{displayedElements[1].name}</span>
-      <button onClick={clickHandlerYes}>YES</button>
-      <button onClick={clickHandlerNo}>NO</button>
+      <StyledButton onClick={clickHandlerYes}>YES</StyledButton>
+      <StyledButton onClick={clickHandlerNo}>NO</StyledButton>
 </Wrapper>
 }
 
 // Stylings
 
 const Wrapper = styled.div`
-  font-family: sans-serif;
-  font-weight: 600;
-  margin-bottom: 12px;
 
-  border: 1px solid black;
+  background-color: rgba(153, 50, 204, 0.6);;
+
   display: grid;
-  padding: 2em 3em;
+  padding: 1.5em 1.5em;
+  border-radius: 1em;
 
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 4fr 1fr;
+  grid-template-rows: 6fr 2fr;
   grid-gap: 5px;
+
+  justify-items: center;
+  text-align: center;
+  color: peachpuff;
+  margin-bottom: 20px;
 `
 
 const ImageStyled = styled.img`
   width: 130px;
+  border-radius: .5em;
+`
+
+const StyledButton = styled.button`
+  width: 130px;
+  text-align: center;
+  border: none;
+  background-color: orange;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 700;
+  font-size: 1.2em;
+  border-radius: .5em;
 `
 
 // Function to generate pair of elements for quizbox

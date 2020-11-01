@@ -1,10 +1,11 @@
 import styled from 'styled-components/macro'
+import SmallHeadline from './SmallHeadline'
 export default Highscore
 
 function Highscore({children}) {
 
   return <Wrapper>
-      <p>Current Score</p>
+      <SmallHeadline>Current Score:</SmallHeadline>
       <div>{children}</div>
 
   </Wrapper>
@@ -21,7 +22,9 @@ const Wrapper = styled.div`
 
   border: 1px solid black;
   display: grid;
-  padding: 2em 3em;
+  padding: .5em 1em;
+  color: hotpink;
+  font-size: 3em;
 
   }
 `

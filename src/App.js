@@ -7,10 +7,10 @@ import SmallHeadline from './SmallHeadline'
 
 function App() {
 
-  const [highscore, setHighscore] = useState(0)
+  const [highscore, setHighscore] = useState([0,"orange"])
 
   function handleUserAnswer(isCorrect) {
-    isCorrect && setHighscore(highscore+10)
+    isCorrect ? setHighscore([highscore[0]+ 10, "green"]) : setHighscore([highscore[0], "red"])
   }
 
   return (
@@ -19,7 +19,7 @@ function App() {
       <Headline>Rick & Morty Quiz</Headline>
       <SmallHeadline>Do they share an episode?</SmallHeadline>
       <Quizbox onUserAnswer={handleUserAnswer}/>
-      <Highscore>{highscore}</Highscore>     
+      <Highscore color={highscore[1]} score={highscore[0]} />     
     </StyledDiv>
   );
 }

@@ -2,11 +2,11 @@ import styled from 'styled-components/macro'
 import SmallHeadline from './SmallHeadline'
 export default Highscore
 
-function Highscore({children}) {
+function Highscore({color, score}) {
 
   return <Wrapper>
       <SmallHeadline>Current Score:</SmallHeadline>
-      <div>{children}</div>
+      <NumberDiv style={{color: color}}>{score}</NumberDiv>
 
   </Wrapper>
 }
@@ -17,14 +17,10 @@ const Wrapper = styled.div`
   font-weight: 600;
   margin-bottom: 12px;
   text-align: center;
+`
 
-  div {
+const NumberDiv = styled.div`
 
-  border: 1px solid black;
-  display: grid;
   padding: .5em 1em;
-  color: hotpink;
   font-size: 3em;
-
-  }
 `
